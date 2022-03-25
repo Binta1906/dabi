@@ -2,21 +2,21 @@
 
 namespace App\Repository;
 
-use App\Entity\Autorisation;
+use App\Entity\autorisation;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Autorisation|null find($id, $lockMode = null, $lockVersion = null)
- * @method Autorisation|null findOneBy(array $criteria, array $orderBy = null)
- * @method Autorisation[]    findAll()
- * @method Autorisation[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method autorisation|null find($id, $lockMode = null, $lockVersion = null)
+ * @method autorisation|null findOneBy(array $criteria, array $orderBy = null)
+ * @method autorisation[]    findAll()
+ * @method autorisation[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class AutorisationRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Autorisation::class);
+        parent::__construct($registry, autorisation::class);
     }
 
     // /**

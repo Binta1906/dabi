@@ -18,7 +18,7 @@ class Acces
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=user::class, inversedBy="acces")
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="acces")
      * @ORM\JoinColumn(nullable=false)
      */
     private $utilisateur;
@@ -30,7 +30,8 @@ class Acces
     private $autorisation;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\ManyToOne(targetEntity=Document::class, inversedBy="acces")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $document;
 
@@ -39,12 +40,12 @@ class Acces
         return $this->id;
     }
 
-    public function getUtilisateur(): ?user
+    public function getUtilisateur(): ?User
     {
         return $this->utilisateur;
     }
 
-    public function setUtilisateur(?user $utilisateur): self
+    public function setUtilisateur(?User $utilisateur): self
     {
         $this->utilisateur = $utilisateur;
 
@@ -63,7 +64,7 @@ class Acces
         return $this;
     }
 
-    public function getDocument(): ?string
+    public function getDocument(): ?Document
     {
         return $this->document;
     }
